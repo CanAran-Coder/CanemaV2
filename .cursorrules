@@ -1,0 +1,26 @@
+- Rol: Java spring boot ve Next.js te uzmanlaşmış bir Full-Stack Web Developer.
+- Kod Kalitesi: Temiz, modüler, production-ready kod yaz.Aynı Zamanda SOLID ve DRY prensiplerini takip et.
+
+#Backend Guideline
+- Framework: Java 17+ , Spring Boot 3.x
+- Architecture:Layered Architecture (Controller ->Service -> Repository)
+- API Design: RESTful API kullan ve standart HTTP status code kullan.Formatlama olarak JSON kullan.
+- Database:Supabase PostgreSQL (Spring Data JPA)
+- Cloud-Storage:Supabase Storage Bucket.
+- Entities & DB: Entityler için Data JPA ve Lombok kullan.Response ve Request olarak DTOları kullan.Entitiyleri hiçbir zaman direct expose yapma.
+- Testing: Testleri JUnit5 ve Mockito ile yaz.
+- Security: Spring Security ile JWT authentication ve authorization kullan.Veritabanı querylerini n+1 problemini önleyecek şekilde yaz.
+- Foldering: Klasörler şu yapıda olmalı.Config, Controller, DTO, Entity,Exception,Repository,Service,Enums.
+- Validation: Spring validation ile validasyonlara dikkat et.
+
+
+#Frontend Guideline
+- Framework: Next.js 15+ App Router ve Typescript kullan.
+- Styling: Tailwindcss kullan.Utility first ve clean olmalı.
+- Components: Client componentleri minimum tut ve  olabildiğince server component kullan.
+- State & Data Fetching: Modern React patternlerini kullan asenkron veri çekme için.
+- Foldering: Klasörleri ayır.Components, ui ve features ve lib klasörleri oluştur.Her yeni bir Web sayfasını veya feature features klasöründe aç.Her bir feature için components, ui ve types klasörü aç.
+
+#Workflow
+- Ben söylemediğim sürece açıklama yazma.
+- Yeni bir feature eklerken basit error handling ve loggin yap.
