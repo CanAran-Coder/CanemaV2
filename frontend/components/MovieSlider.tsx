@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { getShowTimByDate } from "@/lib/getSliderData";
+import { getMoviesByDate } from "@/lib/getSliderData";
 import { toYearMonthDay } from "@/lib/toYearMonthDay";
 
 
@@ -19,7 +19,7 @@ export default function MovieSlider() {
 
   async function getMovies() {
     const date = toYearMonthDay(new Date());
-    const movies = await getShowTimByDate(date);
+    const movies = await getMoviesByDate(date);
     setMovies(movies);
   }
 
@@ -60,15 +60,15 @@ export default function MovieSlider() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-10" />
 
 
-              <div className="flex flex-col z-20 justify-start py-20 gap-y-4 items-start px-10 relative">
+              <div className="flex flex-col z-20 justify-center  pb-15 gap-y-4 items-start px-15  relative  h-full">
 
-                <h1 className="text-6xl font-bold text-white ">{movie.name}</h1>
-                <p className="text-lg text-neutral-200 tracking-tight leading-relaxed max-w-xl">{movie.description}</p>
+                <h1 className="text-8xl font-bold text-white ">{movie.name}</h1>
+                <p className="text-xl text-neutral-200 tracking-tight leading-relaxed max-w-xl">{movie.description}</p>
                 <div className="flex items-center gap-x-2">
                   <FaClock className="text-white font-black" />
-                  <p className="text-lg text-neutral-200 tracking-tight leading-relaxed max-w-xl font-black">{movie.duration} Minutes</p>
+                  <p className="text-xl text-neutral-200 tracking-tight leading-relaxed max-w-xl font-black">{movie.duration} Minutes</p>
                 </div>
-                <button className="bg-green-600 cursor-pointer text-white px-4 py-2 rounded-md font-black">Buy Ticket</button>
+                <button className="bg-green-600 cursor-pointer text-white px-6 py-2 rounded-md font-black">Buy Ticket</button>
 
               </div>
 

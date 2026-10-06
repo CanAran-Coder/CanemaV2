@@ -1,12 +1,17 @@
 import MovieSlider from "@/components/MovieSlider";
-import { fetcher } from "@/lib/fetcher";
-import { getShowTimByDate } from "@/lib/getSliderData";
-
+import Navbar from "@/components/Navbar";
+import MovieCardList from "@/components/MovieCardList";
 async function Home() {
 
 
   return (
-    <MovieSlider/>
+
+    <>
+      <Navbar />
+      <MovieSlider />
+      <MovieCardList />
+    </>
+
   )
 }
 

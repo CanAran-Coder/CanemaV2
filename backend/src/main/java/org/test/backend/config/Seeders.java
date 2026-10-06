@@ -68,22 +68,28 @@ public class Seeders implements CommandLineRunner {
 
     private void seedMovies() {
         saveMovieIfMissing(
-                "Joker",
+                "The Joker",
                 "Arthur Fleck, a party clown and a failed stand-up comedian, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of chaos in Gotham City.",
                 122,
-                "https://m.media-amazon.com/images/M/MV5BNzY3OWQ5NDktNWQ2OC00ZjdlLThkMmItMDhhNDk3NTFiZGU4XkEyXkFqcGc@._V1_.jpg"
+                "https://bskiacxbrwgninouhqxu.supabase.co/storage/v1/object/public/movies/thejoker.webp"
         );
         saveMovieIfMissing(
                 "The Godfather",
                 "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
                 175,
-                "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg"
+                "https://bskiacxbrwgninouhqxu.supabase.co/storage/v1/object/public/movies/godfather.webp"
         );
         saveMovieIfMissing(
                 "The Pianist",
                 "During WWII, acclaimed Polish musician Wladyslaw faces various struggles as he loses contact with his family. As the situation worsens, he hides in the ruins of Warsaw in order to survive.",
                 150,
-                "https://m.media-amazon.com/images/M/MV5BMjEwNmEwYjgtNTk3ZC00NjljLTg5ZDctZTY3ZGQwZjRkZmQxXkEyXkFqcGc@._V1_.jpg"
+                "https://bskiacxbrwgninouhqxu.supabase.co/storage/v1/object/public/movies/pianist.webp"
+        );
+        saveMovieIfMissing(
+                "The Shawshank Redemption",
+                "After a banker is sentenced to life in Shawshank Prison, he forms an unlikely friendship with a seasoned inmate and clings to hope amid cruelty and corruption.",
+                150,
+                "https://bskiacxbrwgninouhqxu.supabase.co/storage/v1/object/public/movies/shawnshank.webp"
         );
     }
 
