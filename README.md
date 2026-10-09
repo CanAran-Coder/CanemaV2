@@ -12,6 +12,7 @@
 - **Cloud & Devops**: Supabase Bucket, Docker, NGINX, Git/Github
 - **Testing & Architecture**: JUnite, Postman, REST, Eraser.io, Dbdiagram.io, WebSockets
 - **Message Brokers:** RabbitMQ
+- **Agent:** Cursor(Grok & Claude) PRO, Copilot PRO
 
 ## Eraser Diagram
 <img width="1022" height="445" alt="Screenshot 2026-09-30 at 10 31 30" src="https://github.com/user-attachments/assets/ba4f5824-075e-4b8c-8072-5859e6100c78" />
