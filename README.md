@@ -7,10 +7,10 @@
 ## Tech Stack
 
 - **Languages:** Java, Typescript, Javascript
-- **Frameworks & Libraries:**Next.js, Spring Boot, React, Tailwind CSS
-- **Database & Caching**:Supabase DB(PostgreSQL), Redis
-- **Cloud & Devops**:Supabase Bucket, Docker, NGINX, Git/Github
-- **Testing & Architecture:JUnite, Postman, REST, Eraser.io, Dbdiagram.io, WebSockets
+- **Frameworks & Libraries:** Next.js, Spring Boot, React, Tailwind CSS
+- **Database & Caching**: Supabase DB(PostgreSQL), Redis
+- **Cloud & Devops**: Supabase Bucket, Docker, NGINX, Git/Github
+- **Testing & Architecture**: JUnite, Postman, REST, Eraser.io, Dbdiagram.io, WebSockets
 - **Message Brokers:** RabbitMQ
 
 ## Eraser Diagram
