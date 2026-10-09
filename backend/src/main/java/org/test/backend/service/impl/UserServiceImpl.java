@@ -7,12 +7,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.test.backend.dto.LoginRequest;
+import org.test.backend.dto.MeResponse;
 import org.test.backend.dto.RegisterRequestDTO;
 import org.test.backend.entity.User;
 import org.test.backend.enums.Role;
 import org.test.backend.repository.UserRepository;
 import org.test.backend.service.JWTService;
 import org.test.backend.service.UserService;
+
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -50,5 +53,22 @@ public class UserServiceImpl implements UserService {
                 .build();
         userRepository.save(user);
         log.info("User registered: {}", user.getEmail());
+    }
+
+    @Override
+    public MeResponse me(String accessToken) {
+        if (jwtService.isTokenExpired(accessToken) || !jwtService.isTokenValid(accessToken)) {
+            return new MeResponse(null,null, null);
+        }
+
+        String email = jwtService.extractEmail(accessToken);
+
+        Optional<User> optUser = userRepository.findByEmail(email);
+        if (!optUser.isPresent()) {
+            return new MeResponse(null,null, null);
+        }
+
+        User user = optUser.get();
+        return new MeResponse(user.getId(),user.getEmail(), user.getRole());
     }
 }

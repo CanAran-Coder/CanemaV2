@@ -115,16 +115,15 @@ public class Seeders implements CommandLineRunner {
         }
 
         LocalDate today = LocalDate.now();
-        for (Movie movie : movies) {
-            for (int i = 0; i < halls.size(); i++) {
-                LocalDateTime date = LocalDateTime.of(today, SHOWTIME_HOURS[i % SHOWTIME_HOURS.length]);
-                saveShowtimeIfMissing(
-                        movie,
-                        halls.get(i),
-                        date,
-                        SHOWTIME_PRICES[i % SHOWTIME_PRICES.length]
-                );
-            }
+        for (int i = 0; i < movies.size(); i++) {
+            int hallIndex = i % halls.size();
+            int slot = i / halls.size();
+            saveShowtimeIfMissing(
+                    movies.get(i),
+                    halls.get(hallIndex),
+                    LocalDateTime.of(today, SHOWTIME_HOURS[slot % SHOWTIME_HOURS.length]),
+                    SHOWTIME_PRICES[slot % SHOWTIME_PRICES.length]
+            );
         }
     }
 

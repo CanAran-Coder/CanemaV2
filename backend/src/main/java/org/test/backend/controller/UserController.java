@@ -7,11 +7,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.test.backend.dto.LoginRequest;
+import org.test.backend.dto.MeResponse;
 import org.test.backend.dto.RegisterRequestDTO;
 import org.test.backend.service.UserService;
 
@@ -47,5 +45,11 @@ public class UserController {
     public ResponseEntity<Void> register(@Valid @RequestBody RegisterRequestDTO request) {
         userService.register(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    @PostMapping("/me")
+    public ResponseEntity<MeResponse> me(@CookieValue(name = "accessToken",required = false) String accessToken) {
+
+        return ResponseEntity.ok(userService.me(accessToken));
+
     }
 }
